@@ -1,0 +1,17 @@
+POST http://localhost:3000/stripe/create-checkout-session
+Content-Type: application/json
+
+[
+    {"price": "price_1OzKtgP7EnXOFVOYoOGsCjXZ", "quantity": 1}
+]
+
+###
+
+GET http://localhost:3000/stripe/products
+
+###
+
+POST http://localhost:3000/stripe/create-customer
+
+###
+

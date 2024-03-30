@@ -1,0 +1,12 @@
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+        "name": "Jenny Rosen",
+        "password": "123456",
+        "email": "jennyrosen@example.com",
+        "street": "Stockholmsvägen 48",
+        "postcode": "54231",
+        "city": "Mariestad",
+        "country": "Sweden"
+}

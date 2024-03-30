@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cus_PpobnE7pd9Xt4c",
+    "name": "Jenny Rosen",
+    "email": "jennyrosen@example.com",
+    "password": "$2b$10$e7xtzR2vlMc46W5DgRA4tetf3.II96sZ3J3lt/jhDnSUsvKC4Z3sG",
+    "address": {
+      "city": "Mariestad",
+      "country": "Sweden",
+      "line1": "Stockholmsvägen 48",
+      "line2": null,
+      "postal_code": "54231",
+      "state": null
+    }
+  }
+]
