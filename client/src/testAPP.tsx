@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useAuth } from './hooks/useAuth';
 
 const ProductDisplay = ({ handleCheckout }) => (
   <section>
@@ -25,6 +26,7 @@ const Message = ({ message }) => (
 
 export default function App() {
   const [message, setMessage] = useState('');
+  const { user } = useAuth();
 
   useEffect(() => {
     const query = new URLSearchParams(window.location.search);
@@ -43,8 +45,14 @@ export default function App() {
   const handleCheckout = async () => {
     try {
       const { data } = await axios.post(
-        'http://localhost:3000/stripe/create-checkout-session',
-        [{ price: 'price_1OzKtgP7EnXOFVOYoOGsCjXZ', quantity: 1 }],
+        'http://localhost:3000/api/stripe/create-checkout-session',
+        {
+          lineItems: [
+            { price: 'price_1OzKtgP7EnXOFVOYoOGsCjXZ', quantity: 1 },
+            { price: 'price_1OzKtfP7EnXOFVOYsbIqfRp8', quantity: 2 },
+          ],
+          userId: 'cus_PpobnE7pd9Xt4c', // ska hämtas från context
+        },
         {
           headers: {
             'Content-Type': 'application/json',

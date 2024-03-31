@@ -1,5 +1,4 @@
 const fs = require('fs').promises;
-const cookieSession = require('cookie-session');
 const fetchUsers = require('../../utils/fetchUsers');
 const bcrypt = require('bcrypt');
 const createStripeCustomer = require('../../utils/stripeUtils/createStripeCustomer');
@@ -44,8 +43,39 @@ const register = async (req, res) => {
   }
 };
 
-const login = (req, res) => {
+const login = async (req, res) => {
   const { email, password } = req.body;
+  const users = await fetchUsers();
+  const userExists = users.find((user) => user.email === email);
+
+  if (!userExists || !(await bcrypt.compare(password, userExists.password))) {
+    return res.status(400).json('Wrong user or password');
+  }
+
+  const userForSession = {
+    id: userExists.id,
+    name: userExists.name,
+    email: userExists.email,
+    address: userExists.address,
+  };
+
+  req.session.user = userForSession;
+
+  res.status(200).json(userForSession);
 };
 
-module.exports = { register, login };
+const logout = (req, res) => {
+  req.session = null;
+  res.status(200).json('Successfully logged out');
+};
+
+const status = (req, res) => {
+  if (!req.session.user) {
+    return res
+      .status(401)
+      .json({ isLoggedIn: false, message: 'You are not logged in' });
+  }
+  res.status(200).json({ isLoggedIn: true, user: req.session.user });
+};
+
+module.exports = { register, login, logout, status };
