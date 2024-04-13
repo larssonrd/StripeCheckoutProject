@@ -25,6 +25,7 @@ VG:
 3. Man skall som inloggad kunna se sina lagda ordrar.
 4. Innan man betalar behöver användaren fylla i sin adress och utifrån adressen välja ett utlämningsställe där paketet skall hämtas (PostNord API).
 
+
 ## Hur man startar projektet
 
 1. Klona repot: `git clone https://github.com/larssonrd/StripeCheckoutProject/`
@@ -42,7 +43,20 @@ VG:
 7. Installera klientens dependencies: `npm install`
 8. Starta klienten: `npm run dev`
 
-Besök `http://localhost:3000` för att se applikationen.
+### Hantera Miljövariabler
+
+För att köra detta projekt lokalt behöver du skapa `.env`-fil i `server` mappen. Denna fil ska innehålla alla nödvändiga miljövariabler. 
+
+Detta ska finnas i server .env: 
+
+SERVER_URL=
+
+CLIENT_URL=
+
+STRIPE_SECRET_KEY=
+
+POSTNORD_API_KEY=
+
 
 ## Länk till GitHub Repo
 
