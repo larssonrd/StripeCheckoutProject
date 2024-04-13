@@ -12,5 +12,61 @@
       "postal_code": "54231",
       "state": null
     }
+  },
+  {
+    "id": "cus_Psyb0BbbZImbxc",
+    "name": "Namnet",
+    "email": "test@test.com",
+    "password": "$2b$10$Zs1gHxiWuOlGwtQKNpSjOubOfpbCrafOyMXgcc23YR.GN.l7c80R2",
+    "address": {
+      "city": "Staden",
+      "country": "Sweden",
+      "line1": "Gatan 45",
+      "line2": null,
+      "postal_code": "54231",
+      "state": null
+    }
+  },
+  {
+    "id": "cus_PtMsKeIpKWUsj9",
+    "name": "Testaffa",
+    "email": "testny@test.com",
+    "password": "$2b$10$HTX9wZ7b4r1dgJ2OeFvOreoAudVlkyBC2Sz10VeaHEqrMT0Q9h/Iq",
+    "address": {
+      "city": "Hanakai 34",
+      "country": "Sweden",
+      "line1": "Gatan 45",
+      "line2": null,
+      "postal_code": "54323",
+      "state": null
+    }
+  },
+  {
+    "id": "cus_PtNHzq7y2pZuig",
+    "name": "Nytt",
+    "email": "test2@test.com",
+    "password": "$2b$10$mdLMsm96R.D.ALc758q1huLU2zEzIaj3kch.QoNGyUik47PkNCtDi",
+    "address": {
+      "city": "Staden",
+      "country": "Sweden",
+      "line1": "Gatan 39",
+      "line2": null,
+      "postal_code": "54332",
+      "state": null
+    }
+  },
+  {
+    "id": "cus_Pv076n5ZxxGcDF",
+    "name": "Nyaste",
+    "email": "nytt@test.com",
+    "password": "$2b$10$MVkzHDIRSBgZDxleaSEpW.EOQKWDRcQry6Ps6nERR9IVgXGiqJIy.",
+    "address": {
+      "city": "Stockholm",
+      "country": "Sweden",
+      "line1": "Gata 45",
+      "line2": null,
+      "postal_code": "103 16",
+      "state": null
+    }
   }
 ]

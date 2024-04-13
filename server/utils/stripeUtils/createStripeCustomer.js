@@ -10,7 +10,7 @@ const createStripeCustomer = async (customerData) => {
     });
     return customer;
   } catch (err) {
-    console.error('Fel vid skapande av Stripe-kund', err);
+    console.error('Error while creating Stripe-customer', err);
     throw err;
   }
 };

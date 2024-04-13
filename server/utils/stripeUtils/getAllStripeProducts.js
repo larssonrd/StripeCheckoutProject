@@ -1,11 +1,16 @@
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const initStripe = require('../../stripe');
 
 const getAllStripeProducts = async () => {
-  const products = await stripe.prices.list({
-    expand: ['data.product'],
-  });
-  console.log(products);
-  return products;
+  try {
+    const stripe = initStripe();
+    const products = await stripe.prices.list({
+      expand: ['data.product'],
+      limit: 50,
+    });
+    return products.data;
+  } catch (err) {
+    console.error(err);
+  }
 };
 
 module.exports = getAllStripeProducts;

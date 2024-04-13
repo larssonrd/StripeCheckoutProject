@@ -1,10 +1,9 @@
-// const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const initStripe = require('../../stripe');
 
 const createCheckoutSession = async (req, res) => {
   const stripe = initStripe();
 
-  const { lineItems, userId } = req.body;
+  const { lineItems, userId, pickupLocation } = req.body;
   try {
     const session = await stripe.checkout.sessions.create({
       customer: userId,
@@ -23,6 +22,10 @@ const createCheckoutSession = async (req, res) => {
       automatic_tax: { enabled: true },
       customer_update: {
         shipping: 'auto',
+      },
+      allow_promotion_codes: true,
+      metadata: {
+        pickupLocation: pickupLocation,
       },
     });
 

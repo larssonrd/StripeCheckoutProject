@@ -8,6 +8,8 @@ const app = express();
 const authRouter = require('./resources/auth/auth.router');
 const stripeRouter = require('./resources/stripe/stripe.router');
 const orderRouter = require('./resources/order/order.router');
+const productsRouter = require('./resources/products/products.router');
+const postnordRouter = require('./resources/postnord/postnord.router');
 
 app.use(
   cors({
@@ -26,6 +28,8 @@ app.use(
 app.use('/api/auth', authRouter);
 app.use('/api/stripe', stripeRouter);
 app.use('/api/order', orderRouter);
+app.use('/api/products', productsRouter);
+app.use('/api/postnord', postnordRouter);
 
 app.listen(3000, () => {
   console.log('Server is up and running...');

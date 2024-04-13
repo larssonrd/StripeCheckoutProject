@@ -1,1 +1,4 @@
-POST http://localhost:3000/api/order/confirm-order?session_id=cs_test_a1uwryjFDhtpHpCo670fIPAmexyG5rGI1epxhJP1v5MMLnRhMaGszgkx8q
+POST http://localhost:3000/api/order/confirm-order?session_id=cs_test_b13QatwT4itjXek5DZzV7HBGdEXMUo1nweLSNJaxHPaArF8YlmhY2hPStk
+
+###
+GET http://localhost:3000/api/order/orders/cus_Psyb0BbbZImbxc

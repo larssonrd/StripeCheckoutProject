@@ -18,6 +18,7 @@ interface IAuthContextType {
   user: IUser | null;
   setLoginStatus: (status: boolean) => void;
   setUser: (user: IUser | null) => void;
+  logout: () => void;
 }
 
 export const AuthContext = createContext<IAuthContextType>({
@@ -25,6 +26,7 @@ export const AuthContext = createContext<IAuthContextType>({
   user: null,
   setLoginStatus: () => {},
   setUser: () => {},
+  logout: () => {},
 });
 
 interface AuthProviderProps {
@@ -39,10 +41,32 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     setIsLoggedIn(status);
   };
 
+  const logout = async () => {
+    try {
+      await axios.post(
+        'http://localhost:3000/api/auth/logout',
+        {},
+        {
+          withCredentials: true,
+        }
+      );
+      setUser(null);
+      setIsLoggedIn(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     const fetchAuthStatus = async () => {
       try {
-        const { data } = await axios.get('/api/auth/status');
+        const { data } = await axios.get(
+          'http://localhost:3000/api/auth/status',
+          {
+            withCredentials: true,
+          }
+        );
+        console.log(data);
         setIsLoggedIn(data.isLoggedIn);
 
         if (data.isLoggedIn && data.user) {
@@ -59,7 +83,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, setLoginStatus, setUser, user }}>
+    <AuthContext.Provider
+      value={{ isLoggedIn, setLoginStatus, setUser, user, logout }}
+    >
       {children}
     </AuthContext.Provider>
   );

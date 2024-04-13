@@ -1,7 +1,9 @@
+import ProductGrid from '../components/ProductGrid';
+
 const Home = () => {
   return (
     <div>
-      <h1 className='text-xl'>Home</h1>
+      <ProductGrid />
     </div>
   );
 };
