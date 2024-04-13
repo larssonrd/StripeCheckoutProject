@@ -6,7 +6,7 @@ Detta är ett full-stack projekt för en simpel webbshop. Projektet använder St
 
 Projektet är en webbshop där användare kan registrera sig, logga in, lägga till produkter i en kundvagn och placera en order. Alla användaruppgifter och ordrar sparas i JSON-filer och alla lösenord sparas krypterade. 
 
-## Krav som Uppfyllts
+## Krav som uppfyllts
 
 G:
 1. Produkter ska listas på en sida. 
@@ -31,19 +31,19 @@ VG:
 1. Klona repot: `git clone https://github.com/larssonrd/StripeCheckoutProject/`
 2. Navigera till projektets mapp: `cd <projekt-namn>`
 
-### Starta Servern
+### Starta servern
 
 3. Navigera till servermappen: `cd server`
 4. Installera serverns dependencies: `npm install`
 5. Starta servern: `npm start`
 
-### Starta Klienten
+### Starta klienten
 
 6. Öppna en ny terminal och navigera till klientmappen: `cd ../client`
 7. Installera klientens dependencies: `npm install`
 8. Starta klienten: `npm run dev`
 
-### Hantera Miljövariabler
+### Hantera miljövariabler
 
 För att köra detta projekt lokalt behöver du skapa `.env`-fil i `server` mappen. Denna fil ska innehålla alla nödvändiga miljövariabler. 
 
@@ -58,6 +58,6 @@ STRIPE_SECRET_KEY=
 POSTNORD_API_KEY=
 
 
-## Länk till GitHub Repo
+## Länk till gitHub repo
 
 https://github.com/larssonrd/StripeCheckoutProject/
