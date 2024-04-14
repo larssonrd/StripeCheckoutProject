@@ -58,6 +58,6 @@ STRIPE_SECRET_KEY=
 POSTNORD_API_KEY=
 
 
-## Länk till gitHub repo
+## Länk till github repo
 
 https://github.com/larssonrd/StripeCheckoutProject/
